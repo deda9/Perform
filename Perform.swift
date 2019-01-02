@@ -8,6 +8,15 @@ func perform(_ expersion: @autoclosure() throws -> (), onError: @autoclosure() -
     }
 }
 
+func perform<T>(_ expersion: @autoclosure() throws -> T, onError: @autoclosure() -> ()) -> T? {
+    do {
+        return try expersion()
+    } catch {
+        onError()
+        return nil
+    }
+}
+
 func perform(_ expersion: @autoclosure() throws -> (), onError: @escaping(Error) -> ()) {
     do {
         try expersion()

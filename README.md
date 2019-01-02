@@ -2,6 +2,8 @@
 
 
 Its easy syntax to write `do try catch`
+
+
 In short it replaces this 
 ```Swift 
 do {
